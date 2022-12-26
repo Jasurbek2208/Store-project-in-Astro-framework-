@@ -8,7 +8,7 @@ interface IButton {
 export default function Button({ content = "Click Me !", onClick }: IButton) {
   return (
     <button
-      class="py-[8px] px-[16px] rounded-xl border border-[#802f6e] text-[#802f6e] font-bold transition duration-[200ms] hover:bg-[#802f6e] hover:text-white"
+      class="py-[10px] px-[16px] rounded-xl border border-[#802f6e] text-[#802f6e] font-bold transition duration-[200ms] hover:bg-[#802f6e] hover:text-white"
       onClick={onClick}
     >
       {content}

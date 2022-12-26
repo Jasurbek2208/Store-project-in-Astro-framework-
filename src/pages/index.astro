@@ -10,8 +10,8 @@ const products = (await res.json()) as IProduct[];
 ---
 
 <Layout>
-  <h1 class="text-[#802f6e] font-bold text-[32px] mb-14">All products</h1>
-  <div class="flex gap-5 flex-wrap justify-center">
+  <h1 class="text-[#802f6e] font-bold text-[28px] mb-14">All products</h1>
+  <div class="grid gap-5 grid-cols-3">
     {products.map((prod: IProduct) => <ProductCard product={prod} />)}
   </div>
 </Layout>
