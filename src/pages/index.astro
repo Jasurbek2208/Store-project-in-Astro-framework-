@@ -1,0 +1,17 @@
+---
+import Layout from "../layout/Layout.astro";
+import type { IProduct } from "../interface/types";
+
+// Components
+import ProductCard from "../components/ProductCard";
+
+const res = await fetch("https://fakestoreapi.com/products");
+const products = (await res.json()) as IProduct[];
+---
+
+<Layout>
+  <h1 class="text-[#802f6e] font-bold text-[32px] mb-14">All products</h1>
+  <div class="flex gap-5 flex-wrap justify-center">
+    {products.map((prod: IProduct) => <ProductCard product={prod} />)}
+  </div>
+</Layout>
