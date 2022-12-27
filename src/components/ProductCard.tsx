@@ -29,13 +29,17 @@ export default function ProductCard({ product }: ProductCardprops) {
           backgroundSize: "contain",
         }}
       ></div>
-      <div class="p-4 flex flex-col">
-        <h2 class="mt-2 text-[15px] font-medium">{maxLen(product.title, "title")}</h2>
+      <div class="relative p-4 h-[280px] flex flex-col">
+        <h2 class="mt-2 text-[15px] font-medium">
+          {maxLen(product.title, "title")}
+        </h2>
         <p class="my-3">{product.price + "$"}</p>
         <p class="mb-6 max-w-[100%] text-[13px] overflow-hidden">
           {maxLen(product.description, "descrp")}
         </p>
-        <Button content="Open" onClick={() => console.log("hello World !")} />
+        <a class="absolute bottom-3 w-[88%]" href={`product/${product.id}`}>
+          <Button content="Open" />
+        </a>
       </div>
     </div>
   );

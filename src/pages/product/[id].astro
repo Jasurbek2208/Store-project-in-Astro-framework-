@@ -1,0 +1,27 @@
+---
+import type { IProduct } from "../../interface/types";
+import Layout from "../../layout/Layout.astro";
+
+export async function getStaticPaths() {
+  const res = await fetch("https://fakestoreapi.com/products");
+  const products = (await res.json()) as IProduct[];
+
+  return products.map((product) => ({
+    params: { id: product.id.toString() },
+    props: { product },
+  }));
+}
+
+interface IProps {
+  product: IProduct;
+}
+
+const { id } = Astro.params;
+const { product } = Astro.props as IProps;
+---
+
+<Layout title={`product-${id}`}>
+  <h1 class="text-center font-bold">{product.title}</h1>
+  <img class="mx-[auto] w-1/6 mt-12 mb-14" src={product.image} alt={product.title}>
+  <p class="mx-[auto] text-center max-w-[500px]">{product.description}</p>
+</Layout>
