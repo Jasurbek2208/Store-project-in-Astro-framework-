@@ -8,12 +8,12 @@ interface ProductCardprops {
 export default function ProductCard({ product }: ProductCardprops) {
   function maxLen(str: string, type: string) {
     let hero: String[] = str.split("");
-    hero.length = type === "descrp" ? 88 : 60;
+    hero.length = type === "descrp" ? 88 : 50;
     type === "descrp"
       ? str.length > 88
         ? (str = hero.join("") + "...")
         : (str = hero.join(""))
-      : str.length > 60
+      : str.length > 50
       ? (str = hero.join("") + "...")
       : (str = hero.join(""));
 
