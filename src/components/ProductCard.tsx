@@ -1,4 +1,4 @@
-import { useEffect, useState } from "preact/hooks";
+import { useState } from "preact/hooks";
 import type { IProduct } from "../interface/types";
 
 // Components
@@ -43,10 +43,6 @@ export default function ProductCard({ product }: ProductCardprops) {
       }
     }
   }
-
-  useEffect(() => {
-    // console.log(isStored);
-  }, [isStored]);
 
   //
   function maxLen(str: string, type: string) {

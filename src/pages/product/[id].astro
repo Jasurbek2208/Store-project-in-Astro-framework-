@@ -21,7 +21,14 @@ const { product } = Astro.props as IProps;
 ---
 
 <Layout title={`product-${id}`}>
-  <h1 class="text-center font-bold">{product.title}</h1>
-  <img class="mx-[auto] w-1/6 mt-12 mb-14" src={product.image} alt={product.title}>
+  <i
+    class="mt-[-30px] fa-solid fa-arrow-left-long font-extrabold text-2xl"
+    onclick="window.history.back()"></i>
+  <h1 class="mt-5 text-center font-bold">{product.title}</h1>
+  <img
+    class="mx-[auto] w-1/6 mt-12 mb-14"
+    src={product.image}
+    alt={product.title}
+  />
   <p class="mx-[auto] text-center max-w-[500px]">{product.description}</p>
 </Layout>
