@@ -79,7 +79,7 @@ export default function ProductCard({ product }: ProductCardprops) {
         }] absolute top-[39%] right-3 cursor-pointer z-10`}
         onClick={addStore}
       ></i>
-      <div class="relative p-4 h-[238px] flex flex-col">
+      <div class="relative p-3 h-[238px] flex flex-col">
         <h2 class="mt-2 text-[15px] font-medium">
           {maxLen(product.title, "title")}
         </h2>
