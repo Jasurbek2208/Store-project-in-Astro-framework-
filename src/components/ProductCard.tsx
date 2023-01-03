@@ -60,7 +60,7 @@ export default function ProductCard({ product }: ProductCardprops) {
   }
 
   return (
-    <div key={product.id} class="relative max-w-[310px] h-[410px] border-2">
+    <div key={product.id} class="relative max-w-[310px] h-[410px] border-2 animate-wiggle">
       <div
         class="mt-2 w-[100%] h-[160px]"
         style={{

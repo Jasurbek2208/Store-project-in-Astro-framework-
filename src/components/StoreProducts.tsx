@@ -38,6 +38,13 @@ export default function StoreProducts() {
     getProducts();
   }, []);
 
+  useEffect(() => {
+    if (storeArr?.length === 0) {
+      setStoreArr(null);
+      localStorage.removeItem("miniShopStore");
+    }
+  }, [storeArr]);
+
   return (
     <div class="m-[-16px] pt-1 pb-16">
       <div className="fixed top-0 left-0 w-[100vw] h-[100vh] bg-gray-50 z-[-10]"></div>
@@ -45,7 +52,7 @@ export default function StoreProducts() {
         products?.map((product: IProduct) =>
           storeArr.includes(product.id.toString()) ? (
             <div
-              class="my-2 border border-black-800 bg-white relative"
+              class="my-2 border border-black-800 bg-white relative animate-wiggle"
               key={product.id}
             >
               <a
@@ -82,7 +89,9 @@ export default function StoreProducts() {
           ) : null
         )
       ) : (
-        <h1 class="mt-36 text-center">Products Not Found !</h1>
+        <h1 class="mt-40 text-xl font-medium text-center">
+          Products Not Found !
+        </h1>
       )}
     </div>
   );
